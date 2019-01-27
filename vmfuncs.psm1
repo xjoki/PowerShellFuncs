@@ -5,6 +5,10 @@
     Speichert eine VM ähnlich Export-VM. Export-VM ist natürlich vorzuziehen. Allerdings erwartet Export-VM
     auf einer Freigabe, das Hyper-V Computerkonto. Save-VM arbeitet mit den Rechten des aktuell angemeldeten
     Benutzer.
+
+    Version 0.1
+    ===========
+    
     .DESCRIPTION
     Speichert die Dateien einer VM in einen definierten Zielordner. Existiert der Ordner am
     definierten Ziel nicht, wird der Ordner erstellt. Durch Verwendung des Schalterparameter Override
