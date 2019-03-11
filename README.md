@@ -8,6 +8,6 @@ Test-HostOnline
 Get-PSVersion
 Get-ComputerSystemInfo
 Compare-PSVersion
-CreateSelfSignCertificateForCodeSigning
+Create-SelfSignCertificateForCodeSigning
 Get-LoggedIn
 Copy-File
