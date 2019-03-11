@@ -11,3 +11,6 @@ Compare-PSVersion
 Create-SelfSignCertificateForCodeSigning
 Get-LoggedIn
 Copy-File
+
+# Vmfuncs
+Save-VM
