@@ -8,7 +8,7 @@ Test-HostOnline
 Get-PSVersion
 Get-ComputerSystemInfo
 Compare-PSVersion
-Create-SelfSignCertificateForCodeSigning
+Set-SelfSignCertificateForCodeSigning
 Get-LoggedIn
 Copy-File
 

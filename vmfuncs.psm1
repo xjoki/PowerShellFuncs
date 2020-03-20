@@ -34,7 +34,7 @@
     )
 
     $vm = Get-VM $Name -ErrorAction SilentlyContinue
-    if($vm -eq $null)
+    if($null -eq $vm)
     {
         Write-Error "Virtuelle Maschine nicht gefunden!"
         return
@@ -82,7 +82,7 @@
             {
                 Write-Verbose "Es wird versucht, die virtuelle Maschine herunterzufahren."
                 $result = Stop-VM -Name $Name -Confirm:$true
-                if($result -eq $null)
+                if($null -eq $result)
                 {
                     if($TurnOff -eq $true)
                     {
@@ -112,7 +112,7 @@
 
     # Prüfung, ob ggf. Snapshots existieren
     $snapShots = Get-VMSnapshot -VMName $Name
-    if($snapShots -ne $null)
+    if($null -ne $snapShots)
     {
         Write-Verbose "Snapshots vorhanden."
         $snapShotHDs = $snapShots.HardDrives

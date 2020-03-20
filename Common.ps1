@@ -9,7 +9,7 @@
 # Get-PSVersion
 # Get-ComputerSystemInfo
 # Compare-PSVersion
-# CreateSelfSignCertificateForCodeSigning
+# Set-SelfSignCertificateForCodeSigning
 # Get-LoggedIn
 # Copy-File
 #
@@ -280,7 +280,7 @@ Function Send-Arp
     return $SendARPInfo.PhysicalAddress
 }
 
-Function Create-SelfSignedCertificateForCodeSigning
+Function Set-SelfSignedCertificateForCodeSigning
 {
      <#
     .SYNOPSIS
@@ -645,12 +645,12 @@ function Copy-File
     $copyProgress = $false
     $workDirectory = Get-Location
     $items = $Source.Split('\')
-    if($items -ne $null -and $items.Length -eq 1)
+    if($null -ne $items -and $items.Length -eq 1)
     {
         $Source = Join-Path -Path $workDirectory -ChildPath $Source
     }
     $items = $Destination.Split('\')
-    if($items -ne $null -and $items.Length -eq 1)
+    if($null -ne $items -and $items.Length -eq 1)
     {
         $Destination = Join-Path -Path $workDirectory -ChildPath $Destination
     }
@@ -688,7 +688,7 @@ function Copy-File
         }
 
         # Speicher für Puffer allokieren, sofern kein OutBuffer
-        if($AutoBufferSize -eq $true -and $OBuffer -eq $null)
+        if($AutoBufferSize -eq $true -and $null -eq $OBuffer)
         {
             $f = Get-Item -Path $Source
             $fileSize = $f.Length
@@ -710,7 +710,7 @@ function Copy-File
 
         $buffer = $null
 
-        if($OBuffer -ne $null)
+        if($null -ne $OBuffer)
         {
             $buffer = $OBuffer
             $BufferSize = $OBuffer.Length
@@ -742,11 +742,11 @@ function Copy-File
     }
     finally
     {
-        if($hsource -ne $null)
+        if($null -ne $hsource)
         {
             $hsource.Dispose()
         }
-        if($hdest -ne $null)
+        if($null -ne $hdest)
         {
             $hdest.Dispose()
         }
